@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :samples
   get 'home/index'
 
-  get 'home/index'
+  get '/' => "home#index"
+
+  #go to the home controller, on the index method
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

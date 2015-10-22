@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @sample.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @sample.lname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @sample.email %>
+</p>
+
+<%= link_to 'Edit', edit_sample_path(@sample) %> |
+<%= link_to 'Back', samples_path %>
