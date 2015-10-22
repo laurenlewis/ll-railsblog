@@ -1,0 +1,12 @@
+<% @users.each do |user| %>   
+<p>These posts belong to :</p>
+
+<%=user.fname%> <hr>
+
+<% end %> 
+
+<% @posts.each do |post| %>   
+
+<%=post.content%> <br>
+
+<% end %> 
