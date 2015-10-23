@@ -1,12 +1,18 @@
-<% @users.each do |user| %>   
-<p>These posts belong to :</p>
 
-<%=user.fname%> <hr>
+<p id="notice"><%= notice %></p>
 
-<% end %> 
+<h1>Listing Posts</h1>
 
-<% @posts.each do |post| %>   
+<table border="1">
 
-<%=post.content%> <br>
-
-<% end %> 
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><a href="/posts/<%=post.id %>">Show</a></td>
+        <td>Edit</td>
+        <td><%= link_to("Delete Post", post_path(post.id), method: :delete)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
