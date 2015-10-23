@@ -14,8 +14,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+# GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+  end
 
   def create
     @post = Post.new(post_params)
@@ -67,7 +69,6 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-      params.require(:post).permit(:fname, :lname, :email, :password)
+      params.require(:post).permit(:id, :content)
     end
 end 
-end
