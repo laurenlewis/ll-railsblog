@@ -3,3 +3,12 @@
   <%= @user.fname %>
   <%= @user.lname %>
 </p>
+
+<p> <% @list = @user.posts.all %>
+	<% @list.each do | post | %>
+	<%= post[:content] %> -- 
+	<%= @user.fname %> <br>
+	<% end %> </p>
+
+<a href="/users"> User's Page</a>
+
