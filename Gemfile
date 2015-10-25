@@ -45,6 +45,10 @@ group :development do
   gem 'spring'
 end
 
+#By hashing the password with bcrypt, we ensure that an attacker won’t be able to log in to the site even if they manage to obtain a copy of the database.
+
+# gem 'rails',                '4.2.2'
+gem 'bcrypt',               '3.1.7'
 
 #specify coffee-script 1.8 so Windows users do not crash
   gem 'coffee-script-source', '1.8.0'
