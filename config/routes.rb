@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/' => "home#index"
   get 'signup'  => 'users#new'
-  get '/users/sign_out' => 'sessions#destroy'
+  # get '/users/sign_out' => 'sessions#destroy'
 
   # Adding a resource to get the standard RESTful actions for sessions. 
   get    'login'   => 'sessions#new'
