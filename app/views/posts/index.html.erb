@@ -24,4 +24,6 @@
   </tbody>
 </table>
 
-<%= link_to 'New Post', new_post_path %>
+<% if session[:session_user_id] %>
+  <%= link_to 'New Post', new_post_path %>
+<% end %>

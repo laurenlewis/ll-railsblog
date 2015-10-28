@@ -5,15 +5,17 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
  
-  get 'home/index'
-
+  
+  root 'home#index'
 
   get '/' => "home#index"
   get 'signup'  => 'users#new'
+  get '/users/sign_out' => 'sessions#destroy'
+
   # Adding a resource to get the standard RESTful actions for sessions. 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get    'logout'  => 'sessions#destroy'
 
   #go to the home controller, on the index method
 

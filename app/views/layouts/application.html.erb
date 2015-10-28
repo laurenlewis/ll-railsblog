@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LlRailsblog</title>
+  <title>Welcome to the Rails Blog</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   	<%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   '/' %></li>
+            <li><%= link_to "Login", 'login' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+     
+    </div>
+
+	<!-- start flash messaging -->
+	<% if flash[:notice] %>
+		<div class="flash notice">
+			<%=flash[:notice] %>
+		</div>
+	<% end %>
+	<% if flash[:alert] %>
+		<div class="flash alert">
+			<%=flash[:alert] %>
+		</div>
+	<% end %>
+	<!-- end flash messaging -->
+
+	<%= yield %>
 
 </body>
 </html>
