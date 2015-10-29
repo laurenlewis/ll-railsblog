@@ -4,11 +4,11 @@
   <%= @user.lname %>
 </p>
  
-<div>
+<div class="posts">
   <% @list = @user.posts.all %>
   <% @list.each do | post | %>
 <p class="post_content">
-  <%= @user.fname %> <br>
+  <%= @user.fname %> <%= post[:created_at]%><br> 
   <%= post[:content] %>
 </p>
   <% end %> 

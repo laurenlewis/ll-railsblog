@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :samples
   resources :users
   resources :posts
+  resources :comments
  
   
   root 'home#index'
