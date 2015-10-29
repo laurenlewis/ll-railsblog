@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   	<%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -28,12 +29,12 @@
 
 	<!-- start flash messaging -->
 	<% if flash[:notice] %>
-		<div class="flash notice">
+		<div class="flash_notice">
 			<%=flash[:notice] %>
 		</div>
 	<% end %>
 	<% if flash[:alert] %>
-		<div class="flash alert">
+		<div class="flash_alert">
 			<%=flash[:alert] %>
 		</div>
 	<% end %>

@@ -4,11 +4,15 @@
   <%= @user.lname %>
 </p>
 
-<p> <% @list = @user.posts.all %>
+<div> <% @list = @user.posts.all %>
 	<% @list.each do | post | %>
-	<%= post[:content] %> -- 
+	<p class="posts">
 	<%= @user.fname %> <br>
-	<% end %> </p>
+	<%= post[:content] %>
+	</p>
+    <br>
+	<% end %> 
+</div>
 
 <a href="/users"> User's Page</a>
 
