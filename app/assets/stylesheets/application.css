@@ -23,6 +23,16 @@ ul.nav li {
 	width: 300px;
 }
 
+.flash_notice {
+	font-size: 16px;
+	color: #57CC43;
+}
+
+.flash_alert {
+	font-size: 16px;
+	color: #FF796D;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
