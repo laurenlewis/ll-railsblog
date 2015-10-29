@@ -1,17 +1,17 @@
 <p>
-  <strong>User:</strong>
+  <strong>Profile for</strong>
   <%= @user.fname %>
   <%= @user.lname %>
 </p>
-
-<div> <% @list = @user.posts.all %>
-	<% @list.each do | post | %>
-	<p class="posts">
-	<%= @user.fname %> <br>
-	<%= post[:content] %>
-	</p>
-    <br>
-	<% end %> 
+ 
+<div>
+  <% @list = @user.posts.all %>
+  <% @list.each do | post | %>
+<p class="post_content">
+  <%= @user.fname %> <br>
+  <%= post[:content] %>
+</p>
+  <% end %> 
 </div>
 
 <a href="/users"> User's Page</a>
