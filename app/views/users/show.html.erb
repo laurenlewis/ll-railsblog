@@ -3,16 +3,29 @@
   <%= @user.fname %>
   <%= @user.lname %>
 </p>
- 
+
+<!-- This shows the user's posts on -->
 <div class="posts">
-  <% @list = @user.posts.all %>
+  <% @list = @user.posts %>
   <% @list.each do | post | %>
-<p class="post_content">
-  <%= @user.fname %> <%= post[:created_at]%><br> 
-  <%= post[:content] %>
-</p>
-  <% end %> 
+	  <p class="post_content">
+	  <%= @user.email %> <%= post[:created_at]%><br> 
+	  <%= post[:content] %>
+
+	  <% postcomments = post.comments %>
+	  <% postcomments.each do | comment | %><br>
+	    <%= comment.user[:email] %>
+	    <%= comment[:body] %>
+	  <% end %> 
+	  </p>
+  <% end %>
 </div>
+
+<p>
+
+
+</p>
+
 
 <a href="/users"> User's Page</a>
 

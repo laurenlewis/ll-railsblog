@@ -17,13 +17,18 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   '/' %></li>
-            <li><%= link_to "Login", '/login' %></li>
-            <li><%= link_to "Logout", '/logout' %></li>
             <li><%= link_to "Users", '/users' %></li>
             <li><%= link_to "Posts", '/posts' %></li>
-
           </ul>
         </nav>
+        <div class="login_info">
+          <% if session[:session_user_id] %>
+            <%= link_to "Logout", '/logout' %><br>
+            <%= session[:session_user_email] %>
+          <% else %>
+            <%= link_to "Login", '/login' %>
+          <% end %>
+        </div>
       </div>
     </header>
     <div class="container">
