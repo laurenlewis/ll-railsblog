@@ -4,6 +4,9 @@ body {
 	background-position: center 20%;
 }
 
+h3 {
+	margin: 5px 0;
+}
 /*#boom {
 	background-size: cover;
 }*/
@@ -65,6 +68,11 @@ textarea {
 	border: 1px solid #ccc;
 	width: 448px;
 	background-color: #fff;
+}
+
+.post_comments {
+	border-top: none;
+	margin-bottom: 45px;
 }
 
 /*
