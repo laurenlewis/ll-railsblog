@@ -17,8 +17,11 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   '/' %></li>
-            <li><%= link_to "Users", '/users' %></li>
-            <li><%= link_to "Posts", '/posts' %></li>
+            <li><%= link_to "Show Users", '/users' %></li>
+            <% if session[:session_user_id] %>
+              <li><%= link_to "New Post", {:controller =>'posts', :action => 'new'} %></li>
+              <li><%= link_to "My Page", {:controller =>'users', :action => 'show', :id => session[:session_user_id]} %></li>
+            <% end %>
           </ul>
         </nav>
         <div class="login_info">
@@ -26,7 +29,8 @@
             <%= link_to "Logout", '/logout' %><br>
             <%= session[:session_user_email] %>
           <% else %>
-            <%= link_to "Login", '/login' %>
+            <%= link_to "Login", '/login' %> | 
+            <%= link_to "Sign-Up", '/signup' %>
           <% end %>
         </div>
       </div>

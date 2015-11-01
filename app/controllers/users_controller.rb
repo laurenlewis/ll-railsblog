@@ -48,11 +48,10 @@ class UsersController < ApplicationController
   end
 
   def destroy   
-  	puts "PARAMS ARE" + params.inspect 
-
-    @users = User.find(params[:id])   
-    if @users.destroy     
-      flash[:notice] = "User deleted successfully."   
+    @user = User.find(params[:id])   
+    if @user.destroy     
+      session.destroy
+      flash[:notice] = "Your account has been deleted successfully."   
     else     
       flash[:alert] = "There was a problem deleting the user."   
     end   

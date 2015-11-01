@@ -1,23 +1,29 @@
-<p>
+<h2>
   <strong>Profile for</strong>
   <%= @user.fname %>
   <%= @user.lname %>
-</p>
+</h2>
 
 <!-- This shows the user's posts on -->
 <div class="posts">
   <% @list = @user.posts %>
   <% @list.each do | post | %>
-	  <p class="post_content">
-	  <%= @user.email %> <%= post[:created_at]%><br> 
-	  <%= post[:content] %>
-
-	  <% postcomments = post.comments %>
-	  <% postcomments.each do | comment | %><br>
-	    <%= comment.user[:email] %>
-	    <%= comment[:body] %>
-	  <% end %> 
-	  </p>
+	  <div class="post_content">
+		  Posted by <%= @user.email %> on <%= post[:created_at]%>:
+		  <div class="post_body">
+			  <%= post[:content] %>
+		  </div>
+ 	  </div>
+ 	  <h3>Comments on this post:</h3>
+ 	  <div class="post_comments">
+		  <% postcomments = post.comments %>
+		  <% postcomments.each do | comment | %>
+			<div class="post_comment">
+			    <%= comment.user[:email] %> says: "<%= comment[:body] %>"
+		    </div>
+		  <% end %> 
+	  </div>
+	  <hr />
   <% end %>
 </div>
 

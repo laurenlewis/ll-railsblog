@@ -22,13 +22,17 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+    if session[:session_user_id]
+      # Assign the Post a User 
+      @post[:user_id] = session[:session_user_id]
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to @post, notice: 'Post was successfully created.' }
+          format.json { render :show, status: :created, location: @post }
+        else
+          format.html { render :new }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -67,8 +71,9 @@ class PostsController < ApplicationController
   #     @post = Post.find(params[:id])
   #   end
 
+private
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-      params.require(:post).permit(:user_id, :content)
-    end
+      params.require(:post).permit(:content)
+  end
 end 

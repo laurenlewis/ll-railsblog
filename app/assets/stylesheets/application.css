@@ -52,6 +52,21 @@ ul.nav li {
 	color: #FF796D;
 }
 
+textarea {
+	width: 448px;
+	max-width: 448px;
+	height: 200px;
+	font-size: 16px;
+}
+
+.post_body,
+.post_comments {
+	padding: 15px;
+	border: 1px solid #ccc;
+	width: 448px;
+	background-color: #fff;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
