@@ -19,8 +19,8 @@
             <li><%= link_to "Home",   '/' %></li>
             <li><%= link_to "Show Users", '/users' %></li>
             <% if session[:session_user_id] %>
-              <li><%= link_to "New Post", {:controller =>'posts', :action => 'new'} %></li>
-              <li><%= link_to "My Page", {:controller =>'users', :action => 'show', :id => session[:session_user_id]} %></li>
+              <li><%= link_to "My Page", {:controller =>'users', :action => 'show', :id => session[:session_user_id]} %></li>       <li><%= link_to "New Post", {:controller =>'posts', :action => 'new'} %></li>
+
             <% end %>
           </ul>
         </nav>

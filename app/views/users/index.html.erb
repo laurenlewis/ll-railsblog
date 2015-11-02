@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
+<h1>Nebula Users</h1>
 
-<table border="1">
+<table>
 
 <table>
   <thead>
@@ -21,7 +21,6 @@
         <td><%= user.fname %></td>
         <td><%= user.lname %></td>
         <td><%= user.email %></td>
-        <td><%= user.id %></td>
         <td><%= link_to 'Show', user %></td>
         <% if session[:session_user_id] == user.id %>
           <td><%= link_to 'Edit', edit_user_path(user) %></td>
@@ -31,5 +30,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'New User', new_user_path %>
